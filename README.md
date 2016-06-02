@@ -1,2 +1,2 @@
 # Whisper
-Blog platform in React &amp; Express
+Personal blog made with React &amp; Express
