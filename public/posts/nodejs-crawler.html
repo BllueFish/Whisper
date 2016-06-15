@@ -1,0 +1,29 @@
+<h1 id="toc_0">Node.js 模拟登录正方教务系统爬虫获取成绩和课表</h1>
+
+<p>学了一段时间的 Node，一直找不到一个好的 Node 实践项目。前些天期中考试结束，突发奇想用 Node 写个爬虫吧，体会一下 Node 中异步的特别之处。</p>
+
+<h4 id="toc_1">大体思路：</h4>
+
+<p>原本以为模拟登录之后发个 GET 请求就能搞定，后来意识到是自己低估了正方的这个教务系统了。首先是登录就费了许多力气，先是从 <a href="http://i.cqut.edu.cn">http://i.cqut.edu.cn</a> 入口登录时怎么都登录不上，登录之后又怎么都获取不到成绩（相比之下获取课表要简单得多）。后来参考了<a href="http://jiavan.com/php-curl-login-cqut-getuserinfo/">@甲烷</a>写的文章之后，才知道虽然 <a href="http://jwxt.cqut.edu.cn">http://jwxt.cqut.edu.cn</a> 登录页有验证码，但是如果不去请求验证码的话后台就不会生成。登录时将验证码的值留空就行了。至于无法获取到成绩的问题，也是换个查询点曲线救国就好了。在信息查询-&gt;学生成绩统计页面能直接获取到所有科目的成绩。</p>
+
+<h4 id="toc_2">踩到的坑：</h4>
+
+<ul>
+<li>登录时要在登陆页面先获取到一个称为 __VIEWSTATE 的值放在 POST 请求中才能成功登陆</li>
+<li>登录后获取成绩时提交的 GET 的请求中需要附带上 Referer 值，否则无法获取到成绩</li>
+<li>在学生成绩查询入口提交POST请求后无法收到成绩（可能是漏了什么值）</li>
+</ul>
+
+<h4 id="toc_3">用到的库：</h4>
+
+<ol>
+<li><a href="http://cnpmjs.org/package/url">url</a>（方便拼接 URL 的小工具）</li>
+<li><a href="http://cnpmjs.org/package/request">request</a>（用来发起 Http 请求）</li>
+<li><a href="https://github.com/cheeriojs/cheerio">cheerio</a>（一个简化版的 JQuery 库，用来分析获取到的 HTML 页面）</li>
+</ol>
+
+<h4 id="toc_4">总结：</h4>
+
+<p>原本以为几个小时就能搞定的东西，断断续续地花了我 4 天的时间。一方面是因为对 Http 协议不够熟悉， 更关键的是对 request 等库的用法不了解，基本上是一边看 API 一边写的代码，效率极低。顺带一提，JS中的链式调用语法真是风骚到不行，写着舒服，看着也是赏心悦目。</p>
+
+<p>源码已托管至 <a href="https://github.com/DoliaWu/ScoreCrawler">Github</a></p>
