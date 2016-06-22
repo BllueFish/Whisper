@@ -23,6 +23,7 @@ body {
 
 @media screen and (min-width: 810px) {
   #profile { width: 300px; height: 100%; float: left; position: absolute;}
+  .blur{ position:absolute;  top:0px;  width:300px;  height: 100%;}
   #profile-background-image { width: 100%; height: 100%;}
   #social-items ul { height: 24px;}
   #social-items img { height: 24px;}
@@ -42,8 +43,14 @@ body {
 #profile-background-image {
   opacity: 0.618;
 }
+.blur{
+  background-color:white;
+  opacity: 0.382;
+  -moz-opacity: 0.382;
+  filter: alpha(opacity=38.2);
+  z-index:30;
+}
 .avatar {
-  z-index: 1;
   width: 100%;
   height: 320px;
   display: -webkit-flex; /* Safari */
@@ -51,6 +58,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  z-index: 90;
 }
 #avatarImage {
   width:80px;
@@ -99,7 +107,6 @@ body {
 #tags {
   height: 100%;
   float: left;
-
   flex-direction: row;
   align-items: center;
 }
@@ -158,16 +165,72 @@ body {
   min-height: 88%;
   /*background-color: white;*/
 }
+/*.article-list-item {*/
+  /*padding: 2em 4em;*/
+  /*background: #feffff;*/
+/*}*/
+/*.article-list-item a {*/
+  /*color: #006ee3;*/
+/*}*/
+#article-list{
+  display: none;
+}
+.new-article-box{
+ padding-top: 10px;
+}
+.list-item{
+  width: 10px;
+  height: 10px;
+  background-color: #E2E2E2;
+  border-radius: 5%;
+  float: left;
+  margin: 23px 5px 0 44%;
+}
+.article-data{
+  color: #B1B1B1;
+  font-size: 13px;
+  float: left;
+  margin: 19px 80px 0 0;
+}
+.new-article{
+  line-height: 16px;
+  float: left;
+  margin-bottom: 30px;
+  text-align: center;
+}
+ .more{
+  cursor: pointer;
+}
+.new-article div{
+  font-size: 13px;
+  line-height: 20px;
+  width: 90%;
+  margin: 0 45px;
+  display: inline-block;
+  text-align: justify;
+}
+.lable{
+  width: auto;
+  height: 10px;
+  display: inline;
+  margin-left: 10px;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  background: white;
+  padding: 3px;
+  font-size: 13px;
+}
+.new-article-box hr{
+  border: 1px solid #E2E2E2;
+  width:960px;
+}
+.clear{
+  clear: both;
+}
 #footer {
   width: 100%;
   height: 64px;
   display: flex;
   justify-content: center;
-}
-.article-list-item {
-  padding: 2em 4em;
-  background: #feffff;
-}
-.article-list-item a {
-  color: #006ee3;
+  clear: both;
 }

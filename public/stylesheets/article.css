@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#backToTop,  #return{
+    width: 40px;
+    height: 40px;
+    opacity: 0.4;
+    -moz-opacity: 0.4;
+    filter: alpha(opacity=40);
+    position: fixed;
+    right: 30px;
+}
+#backToTop{
+    bottom: 100px;
+}
+#return{
+    bottom: 40px;
+}
+#lable1{
+    width: 65px;
+    border: 1px solid black;
+    padding: 3px 0;
+    text-align: center;
+    line-height: 23px;
+    float: left;
+    margin: 30px 20px 0 50px;
+}
+#year{
+    width: 100%;
+    font-size: 15px;
+}
+#month{
+    width: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 2px solid black;
+}
+#day{
+    width: 100%;
+   font-size: 30px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+#article-title{
+    border-bottom: 1px solid black;
+    width: 80%;
+    line-height: 35px;
+    float: left;
+    margin-top:  30px;
+}
+.classify{
+    font-size: 14px;
+}
+#article-title img{
+    margin-top:10px;
+    margin-right:5px ;
+}
+#article-title span{
+    margin-right: 15px;
+}
+#article-title img,span{
+    float: right;
+    font-size: 12px;
+}
+#article{
+    clear: both;
+    width: 80%;
+    margin: 0 142px;
+    padding: 30px 0;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: justify;
+}
+.hr{
+    border:1px solid black;
+    width: 110%;
+    margin: 20px 0;
+}
+.comment{
+    width: 85%;
+    min-height: 160px;
+}
+#userphoto{
+    background-image: url("../images/userphoto.jpg");
+    background-size:cover ;
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    margin: 0 20px 0 135px;
+    float: left;
+}
+#user-message{
+    float: left;
+    width: 70%;
+}
+#user-comment{
+    clear: both;
+    width: 80%;
+    margin: 30px 0 0 135px;
+    font-size: 13px;
+    line-height: 22px;
+}
+#replay{
+    cursor: pointer;
+}
